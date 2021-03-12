@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        DB_PASSWORD = "Clunky-Glance6-Cosmos"
+        DB_PASSWORD = credentials("DB_PASSWORD")
     }
     agent any
     stages {
@@ -10,7 +10,7 @@ pipeline {
                 sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
             }
         }
-        stage ('`Install Docker'){
+        stage ('Install Docker'){
             steps {
                 sh "curl https://get.docker.com | sudo bash"
                 sh 'sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose'
