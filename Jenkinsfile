@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        DB_PASSWORD = credentials("DB_PASSWORD")
+        DB_PASSWORD = "Clunky-Glance6-Cosmos"
     }
     agent any
     stages {
